@@ -1,0 +1,21 @@
+{
+  "1": {
+    "estilo": [
+      "Sedán",
+      "Station Wagon",
+      "Hatchback",
+      "Pick Up 4x2",
+      "Pick Up 4x4",
+      "Pánel",
+      "Microbús / Minivan",
+      "Todo terreno 4x2",
+      "Todo terreno 4x4",
+      "Casa Rodante",
+      "Comercial 1.0 - 3.5 ton",
+      "Comercial 4.0 - 4.5 ton",
+      "Comercial 5.0 - 7.5 ton",
+      "Comercial 8.0 - 9.5 ton",
+      "Comercial 10 + ton"
+    ]
+  }
+}

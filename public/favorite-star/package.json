@@ -1,0 +1,47 @@
+{
+  "name": "favorite-star",
+  "version": "0.1.5",
+  "description": "Web Component element that displays a \"favorite star\".",
+  "keywords": [
+    "web-components"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/argelius/favorite-star"
+  },
+  "author": {
+    "name": "Andreas Argelius",
+    "email": "andreas@argeli.us",
+    "url": "http://argeli.us/"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/argelius/favorite-star/issues"
+  },
+  "homepage": "https://github.com/argelius/favorite-star",
+  "gitHead": "12a9a9857b7c53ebd002d3b08694c14767b9ab6c",
+  "_id": "favorite-star@0.1.5",
+  "_shasum": "08234e9a6abac16c37f177bbe29be9075a3cd6e1",
+  "_from": "favorite-star@",
+  "_npmVersion": "1.4.28",
+  "_npmUser": {
+    "name": "argelius",
+    "email": "andreas@argeli.us"
+  },
+  "maintainers": [
+    {
+      "name": "argelius",
+      "email": "andreas@argeli.us"
+    }
+  ],
+  "dist": {
+    "shasum": "08234e9a6abac16c37f177bbe29be9075a3cd6e1",
+    "tarball": "http://registry.npmjs.org/favorite-star/-/favorite-star-0.1.5.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/favorite-star/-/favorite-star-0.1.5.tgz"
+}
