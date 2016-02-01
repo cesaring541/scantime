@@ -1,7 +1,7 @@
 {
-  "name": "node-js-getting-started",
+  "name": "Scanner",
   "version": "0.1.5",
-  "description": "LoBusuqeLoEncontre the car rental",
+  "description": "ScanTime",
   "main": "index.js",
   "scripts": {
     "start": "nodejs index.js"
@@ -31,7 +31,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@heroku.com:gentle-journey-9664.git"
+    "url": "git@heroku.com:scantime.git"
   },
   "keywords": [
     "node",
