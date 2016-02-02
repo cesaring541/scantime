@@ -121,8 +121,8 @@ module.exports = function(app, passport) {
             fs.unlink('./uploads/'+req.files[x].filename); 
 
           }
-
-        res.end('success');
+        res.end("{'success': true}")
+        
     });
     
 
