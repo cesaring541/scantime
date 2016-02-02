@@ -73,9 +73,9 @@ module.exports = function(app, passport) {
     	users.find({"local.document" : document},function(users,err) {
     		console.dir(err);
     		if (err == '') {
-    			res.end('false');
+    			res.end("{'found': false}");
     		}else{
-    			res.end('true')
+    			res.end("{'found': true}")
     		}
     		
     		
