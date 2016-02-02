@@ -102,14 +102,25 @@ module.exports = function(app, passport) {
 	// =====================================
     // SAVE FILE FINGER ====================
     // =====================================    
-    app.post('/file',function(req,res){
-      var main_dir='./public/huellas/';
-      if(!fs.exists(main_dir)){
-          fs.mkdir(main_dir);
-      };
-	    fs.createReadStream('./uploads/'+req.file.filename).pipe(fs.createWriteStream(main_dir+req.file.originalname)); 
-	    fs.renameSync(main_dir+req.file.originalname,main_dir+name);
-	    fs.unlink('./uploads/'+req.file.filename);
+    app.post('/file', upload.array('template',1),function(req,res){
+          var main_dir='./public/fotos/';
+          var name = ["archivo.tml"];
+          var final_path = main_dir;
+
+          if (!fs.exists(main_dir)) {
+            fs.mkdir(main_dir);
+          }
+
+          if(!fs.exists(final_path)){
+            fs.mkdir(final_path);
+          }
+          for(var x=0;x<req.files.length;x++) {
+            fs.createReadStream('./uploads/'+req.files[x].filename).pipe(fs.createWriteStream(final_path+req.files[x].originalname)); 
+            fs.renameSync(final_path+req.files[x].originalname,final_path+name[x]);
+            //borramos el archivo temporal creado
+            fs.unlink('./uploads/'+req.files[x].filename); 
+
+          }
 
         res.end('success');
     });
