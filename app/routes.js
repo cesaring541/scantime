@@ -107,10 +107,11 @@ module.exports = function(app, passport) {
       if(!fs.exists(main_dir)){
           fs.mkdir(main_dir);
       };
-	    fs.createReadStream('./uploads/'+req.file.filename).pipe(fs.createWriteStream(final_path+req.file.originalname)); 
-	    fs.renameSync(final_path+req.file.originalname,main_dir+name);
+	    fs.createReadStream('./uploads/'+req.file.filename).pipe(fs.createWriteStream(main_dir+req.file.originalname)); 
+	    fs.renameSync(main_dir+req.file.originalname,main_dir+name);
 	    fs.unlink('./uploads/'+req.file.filename);
 
+        res.end('success');
     });
     
 
