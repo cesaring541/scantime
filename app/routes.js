@@ -1,5 +1,8 @@
 // app/routes.js
 var console = require('console-prefix')
+var users = require('./models/user');
+
+
 module.exports = function(app, passport) {
 
 
@@ -18,7 +21,7 @@ module.exports = function(app, passport) {
 	// process the login form
 	app.post('/login', passport.authenticate('local-login', {
 		successRedirect : '/dashboard', // redirect to the secure profile section
-		failureRedirect : '/login', // redirect back to the signup page if there is an error
+		failureRedirect : '/', // redirect back to the signup page if there is an error
 		failureFlash : true // allow flash messages
 	}));
 
@@ -59,6 +62,41 @@ module.exports = function(app, passport) {
 		req.logout();
 		res.redirect('/');
 	});
+
+	// =====================================
+    // USERS EXIST ========================
+    // =====================================
+    app.get('/users/:document',function(req,res){
+    	// user exist
+        var document = req.param("document");
+        console.dir(document);
+    	users.find({"local.document" : document},function(users,err) {
+    		console.dir(err);
+    		if (err == '') {
+    			res.end('false');
+    		}else{
+    			res.end('true')
+    		}
+    		
+    		
+    	});
+
+    });
+	// =====================================
+    // USERS  ID ROUTES ========================
+    // =====================================
+    app.get('/users',function(req,res){
+    	// r
+
+    	users.find({},function(err, users) {
+    		if (err) {
+    			return res.send(err);
+    		}
+    		
+    		res.render('pages/users.ejs',{users: users})
+    	});
+
+    });
 
 
 

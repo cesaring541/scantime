@@ -30,7 +30,7 @@ app.use(flash());
 
 
 //db connects
-mongoose.connect('mongodb://cesaring541:Francy1108@ds043002.mongolab.com:43002/uptc-', 
+mongoose.connect('mongodb://cesaring541:Admin.123@ds055525.mongolab.com:55525/scantime', 
 				{ server: { auto_reconnect: true } }, function(err, db) {
 
 console.log("DASDS" + err  + " ")

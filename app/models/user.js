@@ -9,7 +9,11 @@ var userSchema = mongoose.Schema({
     local            : {
         email        : String,
         password     : String,
-        user         : String,
+        document     : String,
+        name         : String,
+        isAdmin      : Boolean,
+        isSupervisor : Boolean,
+        isActive     : Boolean,
     }
 
 });
