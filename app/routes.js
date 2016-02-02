@@ -1,7 +1,9 @@
 // app/routes.js
 var console = require('console-prefix')
 var users = require('./models/user');
-
+var fs = require('fs.extra');
+var multer  = require('multer')
+var upload = multer({ dest: 'uploads/' })
 
 module.exports = function(app, passport) {
 
@@ -97,8 +99,20 @@ module.exports = function(app, passport) {
     	});
 
     });
+	// =====================================
+    // SAVE FILE FINGER ====================
+    // =====================================    
+    app.post('/file',function(req,res){
+      var main_dir='./public/huellas/';
+      if(!fs.exists(main_dir)){
+          fs.mkdir(main_dir);
+      };
+	    fs.createReadStream('./uploads/'+req.file.filename).pipe(fs.createWriteStream(final_path+req.file.originalname)); 
+	    fs.renameSync(final_path+req.file.originalname,main_dir+name);
+	    fs.unlink('./uploads/'+req.file.filename);
 
-
+    });
+    
 
 };
 
