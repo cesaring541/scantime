@@ -103,7 +103,7 @@
                         <div class="card">
                             <div class="header add-object">
                                 <h4 class="title">Sus Objetos</h4>
-                                <p class="category objects"> A continuacion se listan sus objetos</p>
+                                <p class="category objects"> A continuacion se listan los usuarios</p>
                             </div>
                               <div class="row add-object">
                                 <div class="col-md-2 col-md-offset-1">
@@ -115,9 +115,8 @@
                                     <thead>
                                         <th class="text-align">Nombre</th>
                                         <th class="text-align">Correo</th>
-                                        <th class="text-align">Estado</th>
-                                        <th class="text-align">Permisos</th>
                                         <th class="text-align">Cedula</th>
+                                        <th class="text-align">Registro</th>
                                     </thead>
                                     <tbody >
                                         <% if (users) { %>
@@ -125,16 +124,20 @@
                                         <tr class="<%= users._id %>" style="text-align:center;">
                                             <td> <%= usr.local.name %> </td>
                                             <td> <%= usr.local.email %> </td>
-                                            <td><% if (usr.local.isActive) { %>
+                                        <!--    <td><% if (usr.local.isActive) { %>
                                                       Activo
                                             <%} else {%>
-                                                     Inactivo1  q
+                                                     Inactivo
                                             <%}%>
+                                            </td>-->
+                                         
+                                            <td colspan="" rowspan="" headers="">
+                                                <%= usr.local.document %>
                                             </td>
                                             <td>
-                                                <button id="<%= usr._id %>" class="btnCarRemove btn btn-primary btn-block ">Eliminar <i class="fa fa-trash"></i>
+                                                <button id="<%= usr._id %>" class="btnCarRemove btn btn-primary btn-block ">Ver registros <i class="fa fa-eye"></i>
                                                 </button>
-                                                <input type="hidden" value="<%= usr._id %>">
+                                                <input href="#" type="hidden" value="<%= usr._id %>">
                                             </td>
 
 

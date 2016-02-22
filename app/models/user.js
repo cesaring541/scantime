@@ -14,6 +14,7 @@ var userSchema = mongoose.Schema({
         isAdmin      : Boolean,
         isSupervisor : Boolean,
         isActive     : Boolean,
+        properties   : {}
     }
 
 });
